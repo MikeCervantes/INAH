@@ -6,7 +6,8 @@
 package sinahmax;
 
 import java.awt.Color;
-
+import java.util.ArrayList;
+import sinahmax.Funciones;
 /**
  *
  * @author chiva
@@ -19,6 +20,9 @@ public class INAH02001 extends javax.swing.JFrame {
     public INAH02001() {
         initComponents();
         getContentPane().setBackground(Color.WHITE);
+        Funciones funcion = new Funciones();
+        ArrayList<String> municipio = new ArrayList<String>();
+        funcion.llenarcombo(cmbMunicipio);
     }
 
     /**
@@ -91,6 +95,7 @@ public class INAH02001 extends javax.swing.JFrame {
         txtZonaDeMunicipios = new javax.swing.JTextField();
         lblInformacion = new javax.swing.JLabel();
         lblSig = new javax.swing.JLabel();
+        cmbMunicipio = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -584,6 +589,14 @@ public class INAH02001 extends javax.swing.JFrame {
         });
         getContentPane().add(lblSig, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 650, -1, -1));
 
+        cmbMunicipio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona un Municipio..." }));
+        cmbMunicipio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cmbMunicipioMouseClicked(evt);
+            }
+        });
+        getContentPane().add(cmbMunicipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, -1, -1));
+
         setSize(new java.awt.Dimension(450, 700));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -599,6 +612,11 @@ public class INAH02001 extends javax.swing.JFrame {
         INAH02001 i = new INAH02001();
         i.setVisible(false);
     }//GEN-LAST:event_lblSigMouseClicked
+
+    private void cmbMunicipioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbMunicipioMouseClicked
+     
+        
+    }//GEN-LAST:event_cmbMunicipioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -638,6 +656,7 @@ public class INAH02001 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup SolicitudParaAutorizacionDe;
     private javax.swing.ButtonGroup TipoDeInmueble;
+    private javax.swing.JComboBox<String> cmbMunicipio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
